@@ -34,6 +34,9 @@ public class Main {
         user.courses.addCourses("Java",user.name);
 
         x.startAuthentication(user);
+    
+        //user.courses.printAllCourses();
+
 
     }
 }
