@@ -13,10 +13,11 @@ public class authentication {
                 if (user.name.equals(data.name.get(i)) && user.password.equals(data.password.get(i))) {
                     IsValidInput = true;
                     if (data.type.get(i) == 1) {
-                        System.out.println("Login successful :), List of Courses: ");
-                        for (int j = 0; j < DatabaseUser.courses.size(); j++) {
-                            System.out.println(DatabaseUser.courses.get(j));
-                        }
+                     System.out.println("Login successful :), List of Courses: ");
+                        for (int j = 0; j < user.courses.name.size(); j++) {
+                            if(user.courses.studentName.get(j).equals(user.name)) {
+                                System.out.println(user.courses.name.get(j));
+                            }
                         break;
                     } else {
                         System.out.println("Login successful :), List of Student: ");
