@@ -26,19 +26,32 @@ public class Course {
     void removeCourses(Vector<String>courses){
         for(int i=0;i<courses.size();i++){
             if(this.name.contains(courses.get(i))){
-                courses.remove(i);
+                name.remove(i);
+                studentName.remove(i);
+
             }
         }
     }
 
     void removeCourse(String course){
-        if(this.name.contains(course)){
-            name.remove(course);
+            for(int i=0;i<name.size();i++) {
+            if (name.get(i).equals(course)) {
+                name.remove(i);
+                studentName.remove(i);
+            }
         }
     }
-    void printCourses(){
-        for(String course:name){
-            System.out.println(course);
+    void printAllCourses() {
+        int i;
+        for ( i = 0; i < name.size()-1; i++) {
+            System.out.println(name.get(i));
+            if (!Objects.equals(studentName.get(i), studentName.get(i + 1))) {
+                System.out.println("These courses are owned by  " + studentName.get(i));
+                System.out.println("---------------------------------------------------");
+            }
         }
+        System.out.println(name.get(i));
+        System.out.println("These courses are owned by  " + studentName.get(i));
     }
+
 }
