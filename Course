@@ -1,0 +1,44 @@
+import java.util.Vector;
+
+public class Course {
+    Vector <String> name;
+    Vector <String> studentName;
+    Course (){
+       this.name=new Vector<>();
+       this.studentName= new Vector<>();
+    };
+    Course(Vector<String> courses){
+        this.name = courses;
+    }
+    Vector<String> getCourse(){
+        return name;
+    }
+    void addCourses(Vector<String>courses,String studentName){
+        for(String course:courses) {
+            this.name.add(course);
+            this.studentName.add(studentName);
+        }
+    }
+    void addCourses(String course,String studentName){
+        this.name.add(course);
+        this.studentName.add(studentName);
+    }
+    void removeCourses(Vector<String>courses){
+        for(int i=0;i<courses.size();i++){
+            if(this.name.contains(courses.get(i))){
+                courses.remove(i);
+            }
+        }
+    }
+
+    void removeCourse(String course){
+        if(this.name.contains(course)){
+            name.remove(course);
+        }
+    }
+    void printCourses(){
+        for(String course:name){
+            System.out.println(course);
+        }
+    }
+}
